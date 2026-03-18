@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vox"
+version = "0.1.0"
+description = "Turn any YouTube video into study material"
+requires-python = ">=3.10"
+dependencies = [
+    "youtube-transcript-api>=1.2.4",
+    "ollama>=0.6.1",
+    "rich>=14.0.0",
+    "click>=8.1.0",
+]
+
+[project.scripts]
+vox = "cli:main"
+
+[tool.setuptools]
+py-modules = ["cli", "transcript", "ai", "tui"]
+
+[tool.setuptools.packages.find]
+exclude = ["*"]

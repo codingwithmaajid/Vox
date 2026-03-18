@@ -1,0 +1,41 @@
+# ─────────────────────────────────────────────────────
+# requirements.txt — project dependencies
+#
+# Install everything with:
+#   pip install -r requirements.txt
+#
+# Lines starting with # are comments — pip ignores them
+# ─────────────────────────────────────────────────────
+
+
+# ── TRANSCRIPT ────────────────────────────────────────
+# Fetches subtitles from YouTube videos
+# We use: YouTubeTranscriptApi().fetch(video_id)
+youtube-transcript-api>=1.2.4
+
+
+# ── LOCAL AI (Ollama) ─────────────────────────────────
+# Talks to Ollama running on your machine
+# Ollama itself is NOT a Python package — you install it separately:
+#   https://ollama.com  →  download & install
+#   then run:  ollama pull llama3.2
+# This "ollama" package is just the Python client that talks TO it
+ollama>=0.6.1
+
+
+# ── TERMINAL OUTPUT ───────────────────────────────────
+# Makes terminal output pretty — colours, markdown rendering, spinners
+# We use it to print AI responses nicely formatted
+rich>=14.0.0
+
+
+# ── CLI (Phase 3 — not needed yet) ───────────────────
+# Turns your script into a proper CLI tool with subcommands
+# We'll use this when we build:  yt-ai summarize <url>
+# Commented out for now — uncomment when we reach Phase 3
+# click>=8.1.0
+
+
+# ── NOT INCLUDED (intentionally) ─────────────────────
+# openai    — we're using Ollama instead, no API key needed
+# textual   — the TUI library, we add it in Phase 4
